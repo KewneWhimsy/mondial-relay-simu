@@ -185,9 +185,6 @@
         flex: 1;
         min-width: 160px;
       }
-      .params-fixed-inner .param-card {
-        width: 100%;
-      }
 
       .param-card {
         background: var(--surface);
@@ -223,9 +220,6 @@
         background-position: right 10px center;
         padding-right: 30px;
       }
-      .param-card select.auto {
-        width: auto;
-      }
       .param-card select:focus {
         outline: none;
         border-color: var(--accent);
@@ -258,7 +252,6 @@
         margin-bottom: 1.5rem;
       }
       .vol-card {
-        margin: 0;
         padding: 7px 14px;
         display: flex;
         align-items: center;
@@ -298,10 +291,11 @@
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: 12px;
-        overflow: hidden;
+        overflow-x: auto;
       }
       table {
         width: 100%;
+        min-width: 600px;
         border-collapse: collapse;
         font-size: 13px;
       }
@@ -338,15 +332,13 @@
         font-weight: 600;
         font-size: 13px;
       }
-      td.cost-ht {
+      td.cost-ht,
+      td.net-ht {
         color: var(--text2);
       }
       td.remise {
         color: var(--text3);
         font-size: 12px;
-      }
-      td.net-ht {
-        color: var(--text2);
       }
       td.client-price {
         font-weight: 700;
@@ -659,12 +651,12 @@
         </div>
         <div class="param-card vol-card">
           <div class="param-label">Volume mensuel</div>
-          <select id="vol" onchange="render()" class="auto">
-            <option value="0">0 – 9 colis/mois (0%)</option>
-            <option value="4" selected>10+ colis/mois (−4%)</option>
-            <option value="7">50+ colis/mois (−7%)</option>
-            <option value="9">100+ colis/mois (−9%)</option>
-            <option value="10">250+ colis/mois (−10%)</option>
+          <select id="vol" onchange="render()">
+            <option value="0">0 – 9 colis (0%)</option>
+            <option value="4" selected>10+ colis (−4%)</option>
+            <option value="7">50+ colis (−7%)</option>
+            <option value="9">100+ colis (−9%)</option>
+            <option value="10">250+ colis (−10%)</option>
           </select>
         </div>
       </div>
